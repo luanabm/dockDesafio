@@ -1,0 +1,30 @@
+{
+  "name": "luana_test_dock",
+  "version": "1.0.0",
+  "description": "Desafio para seleção para empresa Dock, por Luana Melo",
+  "author": "Luana Melo",
+  "license": "ISC",
+  "scripts": {
+    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit",
+    "dev": "cross-env NODE_ENV=dev DEBUG=app:* nodemon src/server.js --ignore __tests__",
+    "start": "cross-env DEBUG=app:* node src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.24.0",
+    "debug": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.2",
+    "glob": "^7.2.0",
+    "knex": "^0.95.11",
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.1.1"
+  }
+}
