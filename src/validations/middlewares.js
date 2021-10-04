@@ -5,11 +5,11 @@ const accountsRepository = require('../repositories/accounts');
 const verifyAccount = async (req, res, next) => {
     const idAccount = req.body.idAccount ? req.body.idAccount : req.params.idAccount;
 
-    const account = await accountsRepository.findById(idAccount);
-    if (!account)
+    const accounts = await accountsRepository.findById(idAccount);
+    if (!accounts)
         return res.status(400).json({ message: 'account not exist' });
 
-    if (account.flagActive)
+    if (accounts.flagActive)
         return res.status(400).json({ message: 'blocked account' });
 
     next();

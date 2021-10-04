@@ -20,9 +20,9 @@ const extract = async (req, res, next) => {
 const extractPeriod = async (req, res, next) => {
     try {
         const { idAccount } = req.params;
-        const { dataInicial, dataFinal } = req.body;
+        const { initialDate, finalDate } = req.body;
 
-        const extract = await findByIdAccountPeriod(idConta, [dataInicial, dataFinal]);
+        const extract = await findByIdAccountPeriod(idAccount, [initialDate, finalDate]);
         if (!extract.length)
             return res.status(400).json({ message: 'No transactions in this account in this period' });
 
